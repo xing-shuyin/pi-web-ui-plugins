@@ -1,0 +1,14 @@
+{
+  "id": "run-trace",
+  "name": "run-trace",
+  "source": "xing-shuyin/pi-web-ui/plugins/run-trace",
+  "author": "xing-shuyin",
+  "description": "运行轨迹：任务 → 思考 → 工具 → 文件改动 → 结果的时间线聚合视图，支持回放与节点详情。",
+  "descriptionEn": "Run trajectory: task → thinking → tools → file changes → result timeline with replay and node details.",
+  "icon": "🧭",
+  "iconSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"/></svg>",
+  "homepage": "https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/run-trace",
+  "tags": [
+    "plugin"
+  ]
+}

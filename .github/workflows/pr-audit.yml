@@ -1,0 +1,109 @@
+name: Plugin PR Audit
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci || npm install --no-audit
+
+      - name: Run Plugin Audit
+        id: audit_run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/audit.mjs
+
+      - name: Post Audit Comment to PR
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const fs = require('fs');
+            const summaryFile = process.env.GITHUB_STEP_SUMMARY;
+            if (!summaryFile || !fs.existsSync(summaryFile)) return;
+            const body = fs.readFileSync(summaryFile, 'utf8');
+            if (!body.trim()) return;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c => 
+              c.user.type === 'Bot' && c.body.includes('Plugin Audit Report')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body,
+              });
+            }
+
+      - name: Apply PR Labels
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const passed = '${{ steps.audit_run.outputs.passed }}' === 'true';
+            const risk = '${{ steps.audit_run.outputs.risk }}';
+            
+            const labelsToAdd = [];
+            const labelsToRemove = ['auto-merge-ready', 'needs-maintainer-review', 'audit-failed'];
+
+            if (passed && risk === 'LOW') {
+              labelsToAdd.push('auto-merge-ready');
+            } else if (passed && risk === 'MEDIUM') {
+              labelsToAdd.push('needs-maintainer-review');
+            } else {
+              labelsToAdd.push('audit-failed');
+            }
+
+            // 添加对应标签
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                labels: labelsToAdd,
+              });
+            }
+
+      - name: Auto-merge for Low-Risk Plugin PR
+        if: steps.audit_run.outputs.auto_merge == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr review ${{ github.event.pull_request.number }} --approve --body "🤖 Auto-approved by Plugin Audit CI (Low Risk)"
+          gh pr merge ${{ github.event.pull_request.number }} --squash --auto || true

@@ -1,0 +1,24 @@
+{
+  "name": "pi-web-ui-plugins",
+  "version": "1.0.0",
+  "description": "Official community plugin registry for pi-web-ui with automated CI audit",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/audit.mjs --test-all",
+    "audit": "node scripts/audit.mjs",
+    "build": "node scripts/build-catalog.mjs",
+    "format": "prettier --write \"**/*.{json,mjs,md}\""
+  },
+  "keywords": [
+    "pi-web-ui",
+    "plugins",
+    "registry",
+    "catalog"
+  ],
+  "author": "pi-web-ui community",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
