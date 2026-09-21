@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pi-web-ui Plugin Registry</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #0f172a; color: #f8fafc; line-height: 1.6; }
+    h1 { font-size: 2rem; border-bottom: 1px solid #334155; padding-bottom: 16px; }
+    .badge { background: #3b82f6; color: white; padding: 3px 8px; border-radius: 9999px; font-size: 0.85rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; display: flex; flex-direction: column; }
+    .card-header { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 1.1rem; }
+    .card-desc { font-size: 0.9rem; color: #94a3b8; margin: 12px 0; flex-grow: 1; }
+    .card-source { font-size: 0.8rem; color: #64748b; word-break: break-all; }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 40px; font-size: 0.85rem; color: #64748b; border-top: 1px solid #334155; padding-top: 16px; }
+  </style>
+</head>
+<body>
+  <h1>🧩 pi-web-ui 插件清单市场 <span class="badge">12 个插件</span></h1>
+  <p>订阅地址：<a href="catalog.json"><code>catalog.json</code></a></p>
+  <div class="grid">
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🗄️</span>
+          <span>db-client</span>
+        </div>
+        <div class="card-desc">数据库连接管理：MySQL / PostgreSQL / SQLite / SQL Server / MongoDB / Redis 的库表浏览、SQL 查询与数据编辑。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/db-client" target="_blank">xing-shuyin/pi-web-ui/plugins/db-client</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🖼</span>
+          <span>image-toolkit</span>
+        </div>
+        <div class="card-desc">图片处理工作台：压缩（可按目标体积二分逼近）、裁剪、缩放、旋转/翻转、格式转换（PNG/JPEG/WebP/AVIF）、批量导出 ZIP、水印、滤镜调色、图片信息与 EXIF，可直接读写工作区图片；另给 AI 配了 4 个工具，让 agent 自己压缩/裁剪/缩放/加水印工作区里的图。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/image-toolkit" target="_blank">xing-shuyin/pi-web-ui/plugins/image-toolkit</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>📖</span>
+          <span>legado-web</span>
+        </div>
+        <div class="card-desc">Legado 阅读（文本源）：搜索 / 发现 / 详情 / 目录 / 正文，书源 JSON 与安卓版兼容，可导入、检测、删废源；内置跨域+GBK 代理与本地存储，并给 AI 配了修源接口（读规则、读书源文件、逐步诊断链路、试规则验证）。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/legado-web" target="_blank">xing-shuyin/pi-web-ui/plugins/legado-web</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🌐</span>
+          <span>live-preview</span>
+        </div>
+        <div class="card-desc">Live Server 式预览：/liveserver 看 HTML（含相对资源与自动刷新），/md 看 Markdown 渲染；真服务只绑回环地址，经宿主通用代理对外只露同源前缀。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/live-preview" target="_blank">xing-shuyin/pi-web-ui/plugins/live-preview</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>📊</span>
+          <span>mermaid</span>
+        </div>
+        <div class="card-desc">把对话里的 ```mermaid 围栏渲染成 SVG 图表（fenced-code 渲染插件，本地引擎离线优先）。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/mermaid" target="_blank">xing-shuyin/pi-web-ui/plugins/mermaid</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>📓</span>
+          <span>笔记</span>
+        </div>
+        <div class="card-desc">随手记：笔记 + 待办 + 日程提醒三合一。顶栏按钮打开可自由拖拽的全局浮窗（位置/尺寸记忆，设置也在浮窗里，无独立视图页）；提醒走服务端定时（重启不丢、错过补送），另有 5 个 AI 工具与 /note /todo /remind 快速捕获。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/notes" target="_blank">xing-shuyin/pi-web-ui/plugins/notes</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🌿</span>
+          <span>multi-git</span>
+        </div>
+        <div class="card-desc">多仓库 Git 总览：工作区内每个仓库的变更、差异、历史、分支、贮藏、跨仓搜索与时间线，另有工作区分支聚合、Fetch/Pull 与内置终端（其余只读）。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/EinErste/pi-web-multigit" target="_blank">EinErste/pi-web-multigit</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🧭</span>
+          <span>run-trace</span>
+        </div>
+        <div class="card-desc">运行轨迹：任务 → 思考 → 工具 → 文件改动 → 结果的时间线聚合视图，支持回放与节点详情。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/run-trace" target="_blank">xing-shuyin/pi-web-ui/plugins/run-trace</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🎤</span>
+          <span>语音输入</span>
+        </div>
+        <div class="card-desc">语音输入：输入框旁的麦克风按钮，浏览器语音识别直接听写进输入框；不支持/识别失败时自动降级为服务端转写（远端接口，或一键安装的本地 Whisper，免费不出网）。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/voice-input" target="_blank">xing-shuyin/pi-web-ui/plugins/voice-input</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>📝</span>
+          <span>vscode-editor</span>
+        </div>
+        <div class="card-desc">类 VSCode 工作台：多根文件树 + CodeMirror 编辑器 + 底部终端 + Remote-SSH + SFTP 同步；向 AI 注册 SFTP/SSH/远端文件工具，可自主传代码。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/vscode-editor" target="_blank">xing-shuyin/pi-web-ui/plugins/vscode-editor</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>📬</span>
+          <span>webmail</span>
+        </div>
+        <div class="card-desc">网页邮箱：IMAP 收件 + SMTP 发信 + 新邮件通知，可开放给 AI 直接管理邮件。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/webmail" target="_blank">xing-shuyin/pi-web-ui/plugins/webmail</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>💬</span>
+          <span>微信通道</span>
+        </div>
+        <div class="card-desc">微信扫码登录（与腾讯 openclaw-weixin 同源的 ilink 协议）：出站长轮询收消息，微信里直接指挥 agent，无需公网 IP。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xing-shuyin/pi-web-ui/tree/main/plugins/wechat-ilink" target="_blank">xing-shuyin/pi-web-ui/plugins/wechat-ilink</a>
+        </div>
+      </div>
+    
+  </div>
+  <div class="footer">
+    由 <a href="https://github.com/xing-shuyin/pi-web-ui-plugins" target="_blank">pi-web-ui-plugins</a> 自动构建生成
+  </div>
+</body>
+</html>
