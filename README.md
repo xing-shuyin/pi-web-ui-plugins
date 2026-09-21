@@ -19,15 +19,24 @@
 
 ## 📦 如何在 pi-web-ui 中订阅本清单
 
-### 方式 1：服务端全局环境变量配置
-启动 `pi-web-ui` 时，指定插件清单的 GitHub Pages 地址：
+> ✅ **本清单已是 `pi-web-ui` 的官方默认清单**：服务端启动时若未配置 `PI_WEB_PLUGIN_CATALOG_URL`，
+> 会自动拉取 `https://xing-shuyin.github.io/pi-web-ui-plugins/catalog.json` 并同步进插件市场，无需任何配置。
+
+### 方式 1：覆盖默认清单（可选）
+如需改用自定义清单或本地文件，启动 `pi-web-ui` 时显式指定：
 ```bash
-export PI_WEB_PLUGIN_CATALOG_URL="https://xing-shuyin.github.io/pi-web-ui-plugins/catalog.json"
+export PI_WEB_PLUGIN_CATALOG_URL="https://your-own-catalog.example/catalog.json"
 pi-web-ui
 ```
-启动时服务端会自动拉取该清单并同步进插件市场。
 
-### 方式 2：客户端动态同步
+### 方式 2：关闭默认同步（可选）
+显式设为空串或 `off` / `0` / `false` / `no` 即可关闭开机预同步：
+```bash
+export PI_WEB_PLUGIN_CATALOG_URL="off"
+pi-web-ui
+```
+
+### 方式 3：客户端动态同步
 在 `pi-web-ui` 界面中，通过支持目录同步的插件或控制台直接调用：
 ```javascript
 window.__piWebUiHost.reloadCatalog(
