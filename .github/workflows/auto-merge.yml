@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.workflow_run.conclusion == 'success'
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Download PR info
         uses: actions/download-artifact@v4
         with:
@@ -26,10 +29,13 @@ jobs:
       - name: Read PR info and Merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
           PR_NUM=""
           if [ -f "pr-info.json" ]; then
             PR_NUM=$(jq -r '.prNumber // empty' pr-info.json)
+          elif [ -f "pr-info/pr-info.json" ]; then
+            PR_NUM=$(jq -r '.prNumber // empty' pr-info/pr-info.json)
           fi
           
           if [ -z "$PR_NUM" ] || [ "$PR_NUM" = "null" ]; then
@@ -41,13 +47,13 @@ jobs:
             exit 0
           fi
 
-          echo "🚀 Processing auto-merge for PR #$PR_NUM..."
+          echo "🚀 Processing auto-merge for PR #$PR_NUM in $REPO..."
           
           # 1. 自动打上 auto-merge-ready 标签
-          gh pr edit "$PR_NUM" --add-label "auto-merge-ready" || true
+          gh pr edit "$PR_NUM" --repo "$REPO" --add-label "auto-merge-ready"
           
           # 2. 自动 Approve
-          gh pr review "$PR_NUM" --approve --body "🤖 Auto-approved by Plugin Audit CI (All checks passed)" || true
+          gh pr review "$PR_NUM" --repo "$REPO" --approve --body "🤖 Auto-approved by Plugin Audit CI (All checks passed)"
           
           # 3. 自动 Squash Merge
-          gh pr merge "$PR_NUM" --squash --admin || gh pr merge "$PR_NUM" --squash || true
+          gh pr merge "$PR_NUM" --repo "$REPO" --squash --admin || gh pr merge "$PR_NUM" --repo "$REPO" --squash
