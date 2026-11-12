@@ -12,6 +12,11 @@ on:
 permissions:
   contents: write
 
+# gh-pages 是同一个分支，并发部署会撞上 cannot lock ref
+concurrency:
+  group: build-and-publish-catalog
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
