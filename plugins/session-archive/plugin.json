@@ -4,14 +4,9 @@
   "nameEn": "Session Archive",
   "source": "FlameFires/pi-web-ui-session-archive",
   "author": "FlameFires",
-  "description": "左栏会话行内的归档图标：把对话从侧边栏收起来，不删文件、不申请目录授权；可设 1/7/30 天或永不到期，到期默认只提醒，手动确认才删。附管理面板，支持恢复（自动展开定位并闪烁）与最近删除记录。",
-  "descriptionEn": "An archive icon in each sidebar conversation row: hide a chat without deleting files or requesting directory access. Optional 1/7/30-day or never expiry; expiry only reminds, deletion needs confirmation. Ships a panel to restore (auto-expand, scroll, flash) and review deleted chats.",
+  "description": "左栏会话行内的「收起」按钮：把对话从侧边栏收起来，不删文件、不申请目录授权，也不保存副本（要看历史全文请配 md-chat 之类阅读器）。可设 1/7/30 天或永不到期；到期默认只提醒，手动确认才删文件。附管理面板：恢复（自动展开所在项目、滚动并闪烁定位）与最近删除记录。",
+  "descriptionEn": "A tuck-away button in each sidebar row: hides a chat without deleting files, without directory access and without keeping a copy (use md-chat for history). 1/7/30-day or never expiry; expiry only reminds and deletion needs confirmation. Restores with auto-expand, scroll and flash.",
   "homepage": "https://github.com/FlameFires/pi-web-ui-session-archive",
   "icon": "🗄️",
-  "tags": [
-    "archive",
-    "history",
-    "session",
-    "sidebar"
-  ]
+  "tags": ["archive", "history", "session", "sidebar"]
 }
