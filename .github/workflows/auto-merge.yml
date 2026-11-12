@@ -10,6 +10,10 @@ permissions:
   pull-requests: write
   issues: write
 
+concurrency:
+  group: auto-merge-${{ github.event.workflow_run.head_repository.owner.login }}-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: false
+
 jobs:
   merge:
     runs-on: ubuntu-latest
@@ -24,36 +28,47 @@ jobs:
           name: pr-info
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
-        continue-on-error: true
 
-      - name: Read PR info and Merge
+      - name: Resolve PR number
+        id: pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          HEAD_OWNER: ${{ github.event.workflow_run.head_repository.owner.login }}
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
         run: |
-          PR_NUM=""
-          if [ -f "pr-info.json" ]; then
-            PR_NUM=$(jq -r '.prNumber // empty' pr-info.json)
-          elif [ -f "pr-info/pr-info.json" ]; then
-            PR_NUM=$(jq -r '.prNumber // empty' pr-info/pr-info.json)
+          PR_NUM=$(jq -r '.prNumber // empty' pr-info.json)
+          if [ -z "$PR_NUM" ]; then
+            echo "pr-info.json had no prNumber, resolving from open PRs for $HEAD_OWNER:$HEAD_BRANCH"
+            PR_NUM=$(gh pr list --repo "$REPO" --state open \
+              --head "$HEAD_OWNER:$HEAD_BRANCH" --json number --jq '.[0].number // empty')
           fi
-          
-          if [ -z "$PR_NUM" ] || [ "$PR_NUM" = "null" ]; then
-            PR_NUM="${{ github.event.workflow_run.pull_requests[0].number }}"
+          if [ -z "$PR_NUM" ]; then
+            echo "::error::Could not resolve a PR for $HEAD_OWNER:$HEAD_BRANCH (audit run $RUN_ID)."
+            exit 1
           fi
+          echo "pr_number=$PR_NUM" >> "$GITHUB_OUTPUT"
+          echo "🚀 Resolved PR #$PR_NUM in $REPO"
 
-          if [ -z "$PR_NUM" ] || [ "$PR_NUM" = "null" ]; then
-            echo "No PR number detected, skipping auto-merge."
+      - name: Approve and merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUM: ${{ steps.pr.outputs.pr_number }}
+        run: |
+          STATE=$(gh pr view "$PR_NUM" --repo "$REPO" --json state --jq .state)
+          if [ "$STATE" != "OPEN" ]; then
+            echo "PR #$PR_NUM is $STATE — nothing to merge."
             exit 0
           fi
 
-          echo "🚀 Processing auto-merge for PR #$PR_NUM in $REPO..."
-          
-          # 1. 自动打上 auto-merge-ready 标签
+          # 标签缺失时 add-label 会直接报错，先幂等创建
+          gh label create "auto-merge-ready" --repo "$REPO" --force \
+            --color 0e8a16 --description "Plugin audit passed; safe to auto-merge"
           gh pr edit "$PR_NUM" --repo "$REPO" --add-label "auto-merge-ready"
-          
-          # 2. 自动 Approve
-          gh pr review "$PR_NUM" --repo "$REPO" --approve --body "🤖 Auto-approved by Plugin Audit CI (All checks passed)"
-          
-          # 3. 自动 Squash Merge
-          gh pr merge "$PR_NUM" --repo "$REPO" --squash --admin || gh pr merge "$PR_NUM" --repo "$REPO" --squash
+
+          gh pr review "$PR_NUM" --repo "$REPO" --approve \
+            --body "🤖 Auto-approved by Plugin Audit CI (all checks passed)"
+
+          gh pr merge "$PR_NUM" --repo "$REPO" --squash
