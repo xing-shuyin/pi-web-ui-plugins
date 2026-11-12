@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pi-web-ui Plugin Registry</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #0f172a; color: #f8fafc; line-height: 1.6; }
+    h1 { font-size: 2rem; border-bottom: 1px solid #334155; padding-bottom: 16px; }
+    .badge { background: #3b82f6; color: white; padding: 3px 8px; border-radius: 9999px; font-size: 0.85rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; display: flex; flex-direction: column; }
+    .card-header { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 1.1rem; }
+    .card-desc { font-size: 0.9rem; color: #94a3b8; margin: 12px 0; flex-grow: 1; }
+    .card-source { font-size: 0.8rem; color: #64748b; word-break: break-all; }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 40px; font-size: 0.85rem; color: #64748b; border-top: 1px solid #334155; padding-top: 16px; }
+  </style>
+</head>
+<body>
+  <h1>🧩 pi-web-ui 插件清单市场 <span class="badge">10 个插件</span></h1>
+  <p>订阅地址：<a href="catalog.json"><code>catalog.json</code></a></p>
+  <div class="grid">
+    
+      <div class="card">
+        <div class="card-header">
+          <span>✂</span>
+          <span>Codex 折叠渲染</span>
+        </div>
+        <div class="card-desc">按 phase 归组渲染模型回答：中间旁白、思考与工具调用收进一个可展开分组，生成时显示工作中，完成后显示用时并自动折叠，只留最终答案平铺。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/onjim/codex-messages" target="_blank">onjim/codex-messages</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>⚡</span>
+          <span>额度与成本</span>
+        </div>
+        <div class="card-desc">会话级多模型账本：按 API 提供商和模型连续累计成本、显示 token 与有效单价；订阅明确不计费。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xieweimo/pi-web-ui-contrib/tree/main/plugins/codex-usage" target="_blank">xieweimo/pi-web-ui-contrib/plugins/codex-usage</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>📄</span>
+          <span>聊天归档</span>
+        </div>
+        <div class="card-desc">本地持久聊天归档：保留压缩前原文、按分支浏览历史、问题跳转与 Markdown 文件查看；不调用模型，不修改原会话。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/engharat/pi-web-ui-md-chat" target="_blank">engharat/pi-web-ui-md-chat</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>⏱️</span>
+          <span>模型调度</span>
+        </div>
+        <div class="card-desc">按时段配置主 bot 与子 bot 的模型/思考档位：可视化编辑时间窗（时区可搜索选择 + 本地时间预览）、可折叠窗口卡、当前生效窗口高亮、永不生效窗口告警与未保存修改保护，写入 ~/.pi/agent/model-schedule.jsonc，保存即生效。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/changeworldBT/pi-web-ui-local-patches/tree/main/plugins/model-schedule" target="_blank">changeworldBT/pi-web-ui-local-patches/plugins/model-schedule</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>💬</span>
+          <span>Photon iMessage</span>
+        </div>
+        <div class="card-desc">Photon iMessage 通道：经本机 Photon sidecar（spectrum-ts gRPC 桥）在 Linux/macOS 上收发 iMessage，零公网 IP。机器人循环、输入动效、用户白名单、多轮会话隔离、/sessions 投票气泡切会话、斜杠命令与 AI photon 工具一应俱全。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/changeworldBT/pi-web-photon" target="_blank">changeworldBT/pi-web-photon/plugin</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🌿</span>
+          <span>multi-git</span>
+        </div>
+        <div class="card-desc">多仓库 Git 总览：工作区内每个仓库的变更、差异、历史、分支、贮藏、跨仓搜索与时间线，另有工作区分支聚合、Fetch/Pull 与内置终端（其余只读）。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/EinErste/pi-web-multigit" target="_blank">EinErste/pi-web-multigit</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🌐</span>
+          <span>代理健康</span>
+        </div>
+        <div class="card-desc">探测可配置的 HTTPS 目标及代理链路；无代理时检测直连，失败时对比第二目标，谨慎提示网络问题。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xieweimo/pi-web-ui-contrib/tree/main/plugins/proxy-health" target="_blank">xieweimo/pi-web-ui-contrib/plugins/proxy-health</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🔄</span>
+          <span>重连</span>
+        </div>
+        <div class="card-desc">断连恢复：查看网页服务与重启守护状态，一键重新连接或重启网页服务（支持单服务/全服务重启，配套可选独立守护进程）。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/xieweimo/pi-web-ui-contrib/tree/main/plugins/reconnect" target="_blank">xieweimo/pi-web-ui-contrib/plugins/reconnect</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>🗄️</span>
+          <span>会话归档</span>
+        </div>
+        <div class="card-desc">左栏会话行内的「收起」按钮：把对话从侧边栏收起来，不删文件、不申请目录授权，也不保存副本（要看历史全文请配 md-chat 之类阅读器）。可设 1/7/30 天或永不到期；到期默认只提醒，手动确认才删文件。附管理面板：恢复（自动展开所在项目、滚动并闪烁定位）与最近删除记录。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/FlameFires/pi-web-ui-session-archive" target="_blank">FlameFires/pi-web-ui-session-archive</a>
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <span>📊</span>
+          <span>用量账本</span>
+        </div>
+        <div class="card-desc">记录 pi-web-ui 自己的每一次模型调用：按模型统计调用数、TTFT、延迟、吞吐、缓存命中率、token 与成本，可查看逐条记录、按模型筛选并导出 CSV。成本优先用 SDK 记录，网关不回填时按公开价格表估算并分开展示；数据只来自本机会话与运行事件，不上传任何内容。</div>
+        <div class="card-source">
+          来源: <a href="https://github.com/JSJ189/usage-ledger" target="_blank">JSJ189/usage-ledger</a>
+        </div>
+      </div>
+    
+  </div>
+  <div class="footer">
+    由 <a href="https://github.com/xing-shuyin/pi-web-ui-plugins" target="_blank">pi-web-ui-plugins</a> 自动构建生成
+  </div>
+</body>
+</html>

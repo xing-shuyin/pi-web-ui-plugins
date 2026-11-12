@@ -1,0 +1,101 @@
+[
+  {
+    "id": "codex-messages",
+    "name": "Codex 折叠渲染",
+    "source": "onjim/codex-messages",
+    "description": "按 phase 归组渲染模型回答：中间旁白、思考与工具调用收进一个可展开分组，生成时显示工作中，完成后显示用时并自动折叠，只留最终答案平铺。",
+    "descriptionEn": "Groups reasoning, commentary and tool calls into one collapsible block per turn. Shows a working indicator while running and the elapsed time when done, leaving only the final answer flat.",
+    "icon": "✂",
+    "iconSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 3 21 3 21 8\"/><line x1=\"4\" y1=\"20\" x2=\"21\" y2=\"3\"/><polyline points=\"21 16 21 21 16 21\"/><line x1=\"15\" y1=\"15\" x2=\"21\" y2=\"21\"/><line x1=\"4\" y1=\"4\" x2=\"9\" y2=\"9\"/></svg>",
+    "homepage": "https://github.com/onjim/codex-messages"
+  },
+  {
+    "id": "codex-usage",
+    "name": "额度与成本",
+    "nameEn": "Usage & Billing",
+    "source": "xieweimo/pi-web-ui-contrib/plugins/codex-usage",
+    "description": "会话级多模型账本：按 API 提供商和模型连续累计成本、显示 token 与有效单价；订阅明确不计费。",
+    "descriptionEn": "Conversation-level multi-model ledger: continuous cost totals by API provider and model, token and effective-rate details, with subscription calls explicitly excluded.",
+    "icon": "⚡",
+    "homepage": "https://github.com/xieweimo/pi-web-ui-contrib/tree/main/plugins/codex-usage"
+  },
+  {
+    "id": "md-chat",
+    "name": "聊天归档",
+    "nameEn": "Chat Archive",
+    "source": "engharat/pi-web-ui-md-chat",
+    "description": "本地持久聊天归档：保留压缩前原文、按分支浏览历史、问题跳转与 Markdown 文件查看；不调用模型，不修改原会话。",
+    "descriptionEn": "Persistent local chat archive preserving pre-compaction originals, with branch history, question navigation and a Markdown file viewer. No model calls or native-session edits.",
+    "icon": "📄",
+    "homepage": "https://github.com/engharat/pi-web-ui-md-chat"
+  },
+  {
+    "id": "model-schedule",
+    "name": "模型调度",
+    "source": "changeworldBT/pi-web-ui-local-patches/plugins/model-schedule",
+    "description": "按时段配置主 bot 与子 bot 的模型/思考档位：可视化编辑时间窗（时区可搜索选择 + 本地时间预览）、可折叠窗口卡、当前生效窗口高亮、永不生效窗口告警与未保存修改保护，写入 ~/.pi/agent/model-schedule.jsonc，保存即生效。",
+    "descriptionEn": "Time-of-day model routing for main/sub bots: searchable timezone picker with live local time, collapsible window cards, current-window highlight, never-matching window warnings and unsaved-change protection, written to ~/.pi/agent/model-schedule.jsonc.",
+    "icon": "⏱️",
+    "homepage": "https://github.com/changeworldBT/pi-web-ui-local-patches/tree/main/plugins/model-schedule"
+  },
+  {
+    "id": "photon",
+    "name": "Photon iMessage",
+    "source": "changeworldBT/pi-web-photon/plugin",
+    "description": "Photon iMessage 通道：经本机 Photon sidecar（spectrum-ts gRPC 桥）在 Linux/macOS 上收发 iMessage，零公网 IP。机器人循环、输入动效、用户白名单、多轮会话隔离、/sessions 投票气泡切会话、斜杠命令与 AI photon 工具一应俱全。",
+    "descriptionEn": "Photon iMessage channel for pi-web-ui: send & receive iMessages on Linux/macOS via a local Photon sidecar (spectrum-ts gRPC bridge) with zero public IP. Bot loop, typing indicator, allowlist, per-sender session isolation, a native-poll session picker, slash commands and the AI photon tool included.",
+    "icon": "💬",
+    "iconSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/></svg>",
+    "homepage": "https://github.com/changeworldBT/pi-web-photon"
+  },
+  {
+    "id": "pi-web-multigit",
+    "name": "multi-git",
+    "source": "EinErste/pi-web-multigit",
+    "description": "多仓库 Git 总览：工作区内每个仓库的变更、差异、历史、分支、贮藏、跨仓搜索与时间线，另有工作区分支聚合、Fetch/Pull 与内置终端（其余只读）。",
+    "descriptionEn": "Multi-repo Git overview: changes, diffs, history, branches, stashes, cross-repo search and a timeline for every repository in the workspace, plus a workspace-wide branch view, Fetch/Pull and an optional terminal.",
+    "icon": "🌿",
+    "iconSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"18\" r=\"3\"/><circle cx=\"6\" cy=\"6\" r=\"3\"/><circle cx=\"18\" cy=\"6\" r=\"3\"/><path d=\"M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9\"/><path d=\"M12 12v3\"/></svg>",
+    "homepage": "https://github.com/EinErste/pi-web-multigit"
+  },
+  {
+    "id": "proxy-health",
+    "name": "代理健康",
+    "nameEn": "Proxy Health",
+    "source": "xieweimo/pi-web-ui-contrib/plugins/proxy-health",
+    "description": "探测可配置的 HTTPS 目标及代理链路；无代理时检测直连，失败时对比第二目标，谨慎提示网络问题。",
+    "descriptionEn": "Probe a configurable HTTPS target via an HTTP(S) proxy or directly; compare a second site on failure without assuming the root cause.",
+    "icon": "🌐",
+    "homepage": "https://github.com/xieweimo/pi-web-ui-contrib/tree/main/plugins/proxy-health"
+  },
+  {
+    "id": "reconnect",
+    "name": "重连",
+    "nameEn": "Reconnect",
+    "source": "xieweimo/pi-web-ui-contrib/plugins/reconnect",
+    "description": "断连恢复：查看网页服务与重启守护状态，一键重新连接或重启网页服务（支持单服务/全服务重启，配套可选独立守护进程）。",
+    "descriptionEn": "Reconnection & service recovery: inspect web service and companion watchdog health, reconnect or restart services in one click (supports multi-service restarts with companion watchdog).",
+    "icon": "🔄",
+    "iconSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8\"/><path d=\"M21 3v5h-5\"/><path d=\"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16\"/><path d=\"M3 21v-5h5\"/></svg>",
+    "homepage": "https://github.com/xieweimo/pi-web-ui-contrib/tree/main/plugins/reconnect"
+  },
+  {
+    "id": "session-archive",
+    "name": "会话归档",
+    "nameEn": "Session Archive",
+    "source": "FlameFires/pi-web-ui-session-archive",
+    "description": "左栏会话行内的「收起」按钮：把对话从侧边栏收起来，不删文件、不申请目录授权，也不保存副本（要看历史全文请配 md-chat 之类阅读器）。可设 1/7/30 天或永不到期；到期默认只提醒，手动确认才删文件。附管理面板：恢复（自动展开所在项目、滚动并闪烁定位）与最近删除记录。",
+    "descriptionEn": "A tuck-away button in each sidebar row: hides a chat without deleting files, without directory access and without keeping a copy (use md-chat for history). 1/7/30-day or never expiry; expiry only reminds and deletion needs confirmation. Restores with auto-expand, scroll and flash.",
+    "icon": "🗄️",
+    "homepage": "https://github.com/FlameFires/pi-web-ui-session-archive"
+  },
+  {
+    "id": "usage-ledger",
+    "name": "用量账本",
+    "source": "JSJ189/usage-ledger",
+    "description": "记录 pi-web-ui 自己的每一次模型调用：按模型统计调用数、TTFT、延迟、吞吐、缓存命中率、token 与成本，可查看逐条记录、按模型筛选并导出 CSV。成本优先用 SDK 记录，网关不回填时按公开价格表估算并分开展示；数据只来自本机会话与运行事件，不上传任何内容。",
+    "descriptionEn": "Records every model call inside pi-web-ui: per-model counts, TTFT, latency, throughput, cache hit rate, tokens and cost. Cost prefers the SDK value and falls back to public price tables when the gateway reports zero, shown separately; data comes only from local sessions and run events.",
+    "icon": "📊",
+    "homepage": "https://github.com/JSJ189/usage-ledger"
+  }
+]
