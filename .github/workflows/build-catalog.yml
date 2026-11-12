@@ -3,6 +3,10 @@ name: Build and Publish Catalog
 on:
   push:
     branches: [main]
+  # GITHUB_TOKEN 的合并推送不会触发 push 事件，只能靠 workflow_run 兜住
+  workflow_run:
+    workflows: ["Auto-merge PR"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -11,9 +15,12 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

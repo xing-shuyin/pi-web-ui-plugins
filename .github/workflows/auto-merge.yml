@@ -9,7 +9,6 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
-  actions: write
 
 concurrency:
   group: auto-merge-${{ github.event.workflow_run.head_repository.owner.login }}-${{ github.event.workflow_run.head_branch }}
@@ -53,7 +52,6 @@ jobs:
           echo "🚀 Resolved PR #$PR_NUM in $REPO"
 
       - name: Approve and merge
-        id: merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
@@ -74,26 +72,3 @@ jobs:
             --body "🤖 Auto-approved by Plugin Audit CI (all checks passed)"
 
           gh pr merge "$PR_NUM" --repo "$REPO" --squash
-
-          OID=$(gh pr view "$PR_NUM" --repo "$REPO" --json mergeCommit --jq '.mergeCommit.oid // empty')
-          echo "merge_oid=$OID" >> "$GITHUB_OUTPUT"
-          echo "✅ Merged as $OID"
-
-      # GITHUB_TOKEN 推送不会触发 push 事件，catalog 必须显式重建
-      - name: Trigger catalog rebuild
-        if: steps.merge.outputs.merge_oid != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-          MERGE_OID: ${{ steps.merge.outputs.merge_oid }}
-        run: |
-          HEAD_SHA=""
-          for _ in $(seq 1 10); do
-            HEAD_SHA=$(gh api "repos/$REPO/commits/main" --jq .sha)
-            [ "$HEAD_SHA" = "$MERGE_OID" ] && break
-            sleep 3
-          done
-          if [ "$HEAD_SHA" != "$MERGE_OID" ]; then
-            echo "::warning::main head is $HEAD_SHA, expected $MERGE_OID — rebuilding anyway"
-          fi
-          gh workflow run build-catalog.yml --repo "$REPO" --ref main
