@@ -1,0 +1,1045 @@
+[
+  {
+    "id": "aetheris",
+    "name": "以太座舱",
+    "nameEn": "Aetheris HUD",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "builtin",
+    "description": "以太座舱（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Aetheris HUD (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#040507",
+      "accent": "#00f5d4",
+      "text": "#f0f3f8",
+      "accentContrast": "#0a0c13",
+      "swatches": [
+        "#040507",
+        "#0a0c13",
+        "#00f5d4",
+        "#f0f3f8",
+        "#10b981",
+        "#6c6ff2"
+      ]
+    },
+    "cssUrl": "themes/aetheris/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "ayu-light",
+    "name": "浅阑秋",
+    "nameEn": "Ayu Light",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "浅阑秋（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Ayu Light (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#fcfcfc",
+      "accent": "#b36d0a",
+      "text": "#5c6166",
+      "accentContrast": "#0f1419",
+      "swatches": [
+        "#fcfcfc",
+        "#f8f9fa",
+        "#b36d0a",
+        "#5c6166",
+        "#587600",
+        "#0b63f3"
+      ]
+    },
+    "cssUrl": "themes/ayu-light/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "catppuccin",
+    "name": "Catppuccin",
+    "nameEn": "Catppuccin Mocha",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "classic",
+    "description": "Catppuccin（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Catppuccin Mocha (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#1e1e2e",
+      "accent": "#89b4fa",
+      "text": "#cdd6f4",
+      "accentContrast": "#24273a",
+      "swatches": [
+        "#1e1e2e",
+        "#24273a",
+        "#89b4fa",
+        "#cdd6f4",
+        "#a6e3a1",
+        "#629bf8"
+      ]
+    },
+    "cssUrl": "themes/catppuccin/theme.css",
+    "tags": [
+      "dark",
+      "classic"
+    ]
+  },
+  {
+    "id": "catppuccin-latte",
+    "name": "Catppuccin 浅色",
+    "nameEn": "Catppuccin Latte",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "Catppuccin 浅色（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Catppuccin Latte (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#eff1f5",
+      "accent": "#1e66f5",
+      "text": "#4c4f69",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#eff1f5",
+        "#e6e9ef",
+        "#1e66f5",
+        "#4c4f69",
+        "#2d701e",
+        "#0a59da"
+      ]
+    },
+    "cssUrl": "themes/catppuccin-latte/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "claude-code-dark",
+    "name": "Claude Code 暗色",
+    "nameEn": "Claude Code Dark",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "classic",
+    "description": "Claude Code 暗色（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Claude Code Dark (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#191917",
+      "accent": "#cc785c",
+      "text": "#f0ede4",
+      "accentContrast": "#0b0d12",
+      "swatches": [
+        "#191917",
+        "#21201d",
+        "#cc785c",
+        "#f0ede4",
+        "#82b573",
+        "#7da7d9"
+      ]
+    },
+    "cssUrl": "themes/claude-code-dark/theme.css",
+    "tags": [
+      "dark",
+      "classic"
+    ]
+  },
+  {
+    "id": "codex",
+    "name": "Codex 清白",
+    "nameEn": "Codex Pure",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "Codex 清白（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Codex Pure (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#ffffff",
+      "accent": "#0e9071",
+      "text": "#0d0d0d",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#ffffff",
+        "#f7f7f8",
+        "#0e9071",
+        "#0d0d0d",
+        "#0c795e",
+        "#0b63f3"
+      ]
+    },
+    "cssUrl": "themes/codex/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "cyberpunk",
+    "name": "赛博朋克",
+    "nameEn": "Cyberpunk",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "community",
+    "description": "赛博朋克（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Cyberpunk (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#0a0a0f",
+      "accent": "#00d4ff",
+      "text": "#e6e6ff",
+      "accentContrast": "#12121e",
+      "swatches": [
+        "#0a0a0f",
+        "#12121e",
+        "#00d4ff",
+        "#e6e6ff",
+        "#00ff41"
+      ]
+    },
+    "cssUrl": "themes/cyberpunk/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "dark-teal",
+    "name": "暗青",
+    "nameEn": "Dark Teal",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "community",
+    "description": "暗青（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Dark Teal (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#0a0a0a",
+      "accent": "#31ac9d",
+      "text": "#dadada",
+      "accentContrast": "#17171c",
+      "swatches": [
+        "#0a0a0a",
+        "#17171c",
+        "#31ac9d",
+        "#dadada",
+        "#2dd4bf",
+        "#4588f6"
+      ]
+    },
+    "cssUrl": "themes/dark-teal/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "dazzle",
+    "name": "炫彩",
+    "nameEn": "Dazzle",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "community",
+    "description": "炫彩（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Dazzle (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#0b0b14",
+      "accent": "#818cf8",
+      "text": "#e8e8f0",
+      "accentContrast": "#13131e",
+      "swatches": [
+        "#0b0b14",
+        "#13131e",
+        "#818cf8",
+        "#e8e8f0",
+        "#22c55e"
+      ]
+    },
+    "cssUrl": "themes/dazzle/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "everforest-light",
+    "name": "森野浅绿",
+    "nameEn": "Everforest Light",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "森野浅绿（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Everforest Light (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#fdf6e3",
+      "accent": "#3382ad",
+      "text": "#5c6a72",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#fdf6e3",
+        "#f4f0d9",
+        "#3382ad",
+        "#5c6a72",
+        "#616e01",
+        "#0b5fe9"
+      ]
+    },
+    "cssUrl": "themes/everforest-light/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "flow",
+    "name": "极简行文",
+    "nameEn": "Pure Flow",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "builtin",
+    "description": "极简行文（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Pure Flow (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#171717",
+      "accent": "#ffffff",
+      "text": "#f2f2f2",
+      "accentContrast": "#000000",
+      "swatches": [
+        "#171717",
+        "#212121",
+        "#ffffff",
+        "#f2f2f2",
+        "#10b981",
+        "#4f8ef7"
+      ]
+    },
+    "cssUrl": "themes/flow/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "flow-cristallo",
+    "name": "极简行文 · 深空微晶",
+    "nameEn": "Pure Flow · Cristallo Space",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "builtin",
+    "description": "极简行文 · 深空微晶（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Pure Flow · Cristallo Space (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#07090e",
+      "accent": "#38bdf8",
+      "text": "#ffffff",
+      "accentContrast": "#082f49",
+      "swatches": [
+        "#07090e",
+        "#121621",
+        "#38bdf8",
+        "#ffffff",
+        "#34d399"
+      ]
+    },
+    "cssUrl": "themes/flow-cristallo/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "flow-ink",
+    "name": "极简行文 · 天青墨韵",
+    "nameEn": "Pure Flow · Cyan Ink Zen",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "builtin",
+    "description": "极简行文 · 天青墨韵（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Pure Flow · Cyan Ink Zen (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#0a0e11",
+      "accent": "#14b8a6",
+      "text": "#f0fdfa",
+      "accentContrast": "#042f2e",
+      "swatches": [
+        "#0a0e11",
+        "#11171d",
+        "#14b8a6",
+        "#f0fdfa",
+        "#34d399",
+        "#2dd4bf"
+      ]
+    },
+    "cssUrl": "themes/flow-ink/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "flow-light",
+    "name": "极简行文",
+    "nameEn": "Pure Flow Light",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "builtin",
+    "description": "极简行文（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Pure Flow Light (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#ffffff",
+      "accent": "#111827",
+      "text": "#111827",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#ffffff",
+        "#f8f9fa",
+        "#111827",
+        "#047d58",
+        "#2563eb"
+      ]
+    },
+    "cssUrl": "themes/flow-light/theme.css",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "flow-obsidian",
+    "name": "极简行文 · 黑曜星芒",
+    "nameEn": "Pure Flow · Obsidian Starfall",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "builtin",
+    "description": "极简行文 · 黑曜星芒（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Pure Flow · Obsidian Starfall (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#0b0d13",
+      "accent": "#6366f1",
+      "text": "#f8fafc",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#0b0d13",
+        "#12151f",
+        "#6366f1",
+        "#f8fafc",
+        "#34d399",
+        "#818cf8"
+      ]
+    },
+    "cssUrl": "themes/flow-obsidian/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "geist",
+    "name": "极客雪白",
+    "nameEn": "Geist Light",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "极客雪白（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Geist Light (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#ffffff",
+      "accent": "#0070f3",
+      "text": "#000000",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#ffffff",
+        "#fafafa",
+        "#0070f3",
+        "#000000",
+        "#047d58",
+        "#0f66f4"
+      ]
+    },
+    "cssUrl": "themes/geist/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "gruvbox-light",
+    "name": "格鲁夫沙",
+    "nameEn": "Gruvbox Light",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "格鲁夫沙（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Gruvbox Light (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#fbf1c7",
+      "accent": "#af3a03",
+      "text": "#3c3836",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#fbf1c7",
+        "#ebdbb2",
+        "#af3a03",
+        "#3c3836",
+        "#54510a",
+        "#084bb8"
+      ]
+    },
+    "cssUrl": "themes/gruvbox-light/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "kanagawa-lotus",
+    "name": "神奈川莲",
+    "nameEn": "Kanagawa Lotus",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "神奈川莲（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Kanagawa Lotus (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#f2ecbc",
+      "accent": "#4d699b",
+      "text": "#545464",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#f2ecbc",
+        "#e5ddb0",
+        "#4d699b",
+        "#545464",
+        "#4f6238",
+        "#0953cc"
+      ]
+    },
+    "cssUrl": "themes/kanagawa-lotus/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "md-preview",
+    "name": "紫晕",
+    "nameEn": "Purple Haze",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "community",
+    "description": "紫晕（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Purple Haze (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#0a0b10",
+      "accent": "#3b82f6",
+      "text": "#e6e8ef",
+      "accentContrast": "#0b0d12",
+      "swatches": [
+        "#0a0b10",
+        "#3b82f6",
+        "#e6e8ef",
+        "#22c55e"
+      ]
+    },
+    "cssUrl": "themes/md-preview/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "mist",
+    "name": "雾蓝灰",
+    "nameEn": "Misty Blue Gray",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "community",
+    "description": "雾蓝灰（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Misty Blue Gray (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#e9eef4",
+      "accent": "#027dbd",
+      "text": "#1e293b",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#e9eef4",
+        "#f8fafc",
+        "#027dbd",
+        "#1e293b",
+        "#047351",
+        "#0a5bdf"
+      ]
+    },
+    "cssUrl": "themes/mist/theme.css",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "nord",
+    "name": "北欧极光",
+    "nameEn": "Nord",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "classic",
+    "description": "北欧极光（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Nord (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#2e3440",
+      "accent": "#88c0d0",
+      "text": "#d8dee9",
+      "accentContrast": "#2e3440",
+      "swatches": [
+        "#2e3440",
+        "#3b4252",
+        "#88c0d0",
+        "#d8dee9",
+        "#abc496",
+        "#98bdfa"
+      ]
+    },
+    "cssUrl": "themes/nord/theme.css",
+    "tags": [
+      "dark",
+      "classic"
+    ]
+  },
+  {
+    "id": "one-dark",
+    "name": "One Dark",
+    "nameEn": "One Dark Pro",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "classic",
+    "description": "One Dark（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "One Dark Pro (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#282c34",
+      "accent": "#61afef",
+      "text": "#abb2bf",
+      "accentContrast": "#21252b",
+      "swatches": [
+        "#282c34",
+        "#21252b",
+        "#61afef",
+        "#abb2bf",
+        "#98c379",
+        "#5d98f8"
+      ]
+    },
+    "cssUrl": "themes/one-dark/theme.css",
+    "tags": [
+      "dark",
+      "classic"
+    ]
+  },
+  {
+    "id": "paper",
+    "name": "暖纸",
+    "nameEn": "Warm Paper",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "community",
+    "description": "暖纸（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Warm Paper (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#f7f1e3",
+      "accent": "#b45309",
+      "text": "#3f372c",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#f7f1e3",
+        "#fffdf6",
+        "#b45309",
+        "#3f372c",
+        "#147739",
+        "#0a5de4"
+      ]
+    },
+    "cssUrl": "themes/paper/theme.css",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "rose-pine-dawn",
+    "name": "玫瑰松晨",
+    "nameEn": "Rose Pine Dawn",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "玫瑰松晨（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Rose Pine Dawn (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#faf4ed",
+      "accent": "#8871a3",
+      "text": "#464261",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#faf4ed",
+        "#fffaf3",
+        "#8871a3",
+        "#464261",
+        "#416f77",
+        "#0b5fe9"
+      ]
+    },
+    "cssUrl": "themes/rose-pine-dawn/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "sakura",
+    "name": "樱粉",
+    "nameEn": "Sakura Pink",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "community",
+    "description": "樱粉（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Sakura Pink (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#fdf2f5",
+      "accent": "#db2777",
+      "text": "#4a2b35",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#fdf2f5",
+        "#fffbfc",
+        "#db2777",
+        "#4a2b35",
+        "#047351",
+        "#0a5de4"
+      ]
+    },
+    "cssUrl": "themes/sakura/theme.css",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "solarized-light",
+    "name": "日照浅色",
+    "nameEn": "Solarized Light",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "classic",
+    "description": "日照浅色（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Solarized Light (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#fdf6e3",
+      "accent": "#2074af",
+      "text": "#586e75",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#fdf6e3",
+        "#eee8d5",
+        "#2074af",
+        "#586e75",
+        "#546100",
+        "#0a55d1"
+      ]
+    },
+    "cssUrl": "themes/solarized-light/theme.css",
+    "tags": [
+      "light",
+      "classic"
+    ]
+  },
+  {
+    "id": "tokyo-night",
+    "name": "东京夜色 · Tokyo Night",
+    "nameEn": "Tokyo Night",
+    "author": "pi-web-ui-community",
+    "scheme": "dark",
+    "group": "community",
+    "description": "经典 Tokyo Night 深色暗调主题，融合霓虹天蓝与夜幕深紫，提供高对比度护眼色彩。",
+    "descriptionEn": "Classic Tokyo Night dark theme celebrating the lights of downtown Tokyo at night with clean contrast.",
+    "palette": {
+      "bg": "#1a1b26",
+      "accent": "#7aa2f7",
+      "text": "#c0caf5",
+      "accentContrast": "#15161e",
+      "swatches": [
+        "#1a1b26",
+        "#24283b",
+        "#7aa2f7",
+        "#bb9af7",
+        "#7dcfff",
+        "#9ece6a"
+      ]
+    },
+    "cssUrl": "themes/tokyo-night/theme.css",
+    "tags": [
+      "dark",
+      "tokyo-night",
+      "neon",
+      "popular"
+    ]
+  },
+  {
+    "id": "translucent",
+    "name": "半透明",
+    "nameEn": "Translucent",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "community",
+    "description": "半透明（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Translucent (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#0d0e12",
+      "accent": "#8b5cf6",
+      "text": "#e6e8ef",
+      "accentContrast": "#0b0d12",
+      "swatches": [
+        "#0d0e12",
+        "#14161c",
+        "#8b5cf6",
+        "#e6e8ef",
+        "#34d399"
+      ]
+    },
+    "cssUrl": "themes/translucent/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "transparent",
+    "name": "全透明",
+    "nameEn": "Transparent",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "community",
+    "description": "全透明（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Transparent (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#0d0e12",
+      "accent": "#8b5cf6",
+      "text": "#e6e8ef",
+      "accentContrast": "#0b0d12",
+      "swatches": [
+        "#0d0e12",
+        "#14161c",
+        "#8b5cf6",
+        "#e6e8ef",
+        "#34d399"
+      ]
+    },
+    "cssUrl": "themes/transparent/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "vs-code-dark",
+    "name": "VS Code 暗色",
+    "nameEn": "VS Code Dark",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "classic",
+    "description": "VS Code 暗色（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "VS Code Dark (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#1e1e1e",
+      "accent": "#2e89b4",
+      "text": "#d4d4d4",
+      "accentContrast": "#0b0d12",
+      "swatches": [
+        "#1e1e1e",
+        "#252526",
+        "#2e89b4",
+        "#d4d4d4",
+        "#4ec9b0",
+        "#569cd6"
+      ]
+    },
+    "cssUrl": "themes/vs-code-dark/theme.css",
+    "tags": [
+      "dark",
+      "classic"
+    ]
+  },
+  {
+    "id": "wallpaper-flow",
+    "name": "壁纸专属 · 极简行文",
+    "nameEn": "Wallpaper Pure Flow",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "community",
+    "description": "壁纸专属 · 极简行文（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Wallpaper Pure Flow (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#050507",
+      "accent": "#ffffff",
+      "text": "#ffffff",
+      "accentContrast": "#000000",
+      "swatches": [
+        "#050507",
+        "#0c0d11",
+        "#ffffff",
+        "#4ade80",
+        "#94a3b8"
+      ]
+    },
+    "cssUrl": "themes/wallpaper-flow/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "wallpaper-obsidian",
+    "name": "壁纸专属 · 黑曜冷月",
+    "nameEn": "Wallpaper Obsidian",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "community",
+    "description": "壁纸专属 · 黑曜冷月（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Wallpaper Obsidian (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#050507",
+      "accent": "#e2e8f0",
+      "text": "#ffffff",
+      "accentContrast": "#0c0d11",
+      "swatches": [
+        "#050507",
+        "#0c0d11",
+        "#e2e8f0",
+        "#ffffff",
+        "#4ade80",
+        "#94a3b8"
+      ]
+    },
+    "cssUrl": "themes/wallpaper-obsidian/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "white",
+    "name": "白色",
+    "nameEn": "White",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "community",
+    "description": "白色（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "White (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#ffffff",
+      "accent": "#0969da",
+      "text": "#1f2328",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#ffffff",
+        "#0969da",
+        "#1f2328",
+        "#04825b",
+        "#1469f4"
+      ]
+    },
+    "cssUrl": "themes/white/theme.css",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "zhujian",
+    "name": "朱笺",
+    "nameEn": "Vermilion Note",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "builtin",
+    "description": "朱笺（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Vermilion Note (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#f5f1e8",
+      "accent": "#bf3b1f",
+      "text": "#262218",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#f5f1e8",
+        "#f0ebdf",
+        "#bf3b1f",
+        "#262218",
+        "#3d7a55",
+        "#3a5fa0"
+      ]
+    },
+    "cssUrl": "themes/zhujian/theme.css",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "zhujian-dark",
+    "name": "朱笺·夜",
+    "nameEn": "Vermilion Note Dark",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "builtin",
+    "description": "朱笺·夜（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Vermilion Note Dark (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#131313",
+      "accent": "#e05a35",
+      "text": "#eaeaea",
+      "accentContrast": "#0b0d12",
+      "swatches": [
+        "#131313",
+        "#1e1e1e",
+        "#e05a35",
+        "#eaeaea",
+        "#64a874",
+        "#7a9cc9"
+      ]
+    },
+    "cssUrl": "themes/zhujian-dark/theme.css",
+    "tags": [
+      "dark"
+    ]
+  },
+  {
+    "id": "zhupi",
+    "name": "朱批",
+    "nameEn": "Vermilion Manuscript",
+    "author": "pi-web-ui",
+    "scheme": "light",
+    "group": "builtin",
+    "description": "朱批（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Vermilion Manuscript (light) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#f5f1e8",
+      "accent": "#bf3b1f",
+      "text": "#262218",
+      "accentContrast": "#ffffff",
+      "swatches": [
+        "#f5f1e8",
+        "#f0ebdf",
+        "#bf3b1f",
+        "#262218",
+        "#3d7a55",
+        "#3a5fa0"
+      ]
+    },
+    "cssUrl": "themes/zhupi/theme.css",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "zhupi-dark",
+    "name": "朱批·夜",
+    "nameEn": "Vermilion Night",
+    "author": "pi-web-ui",
+    "scheme": "dark",
+    "group": "builtin",
+    "description": "朱批·夜（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+    "descriptionEn": "Vermilion Night (dark) theme migrated from the pi-web-ui theme collection.",
+    "palette": {
+      "bg": "#131313",
+      "accent": "#e05a35",
+      "text": "#eaeaea",
+      "accentContrast": "#0b0d12",
+      "swatches": [
+        "#131313",
+        "#1e1e1e",
+        "#e05a35",
+        "#eaeaea",
+        "#64a874",
+        "#7a9cc9"
+      ]
+    },
+    "cssUrl": "themes/zhupi-dark/theme.css",
+    "tags": [
+      "dark"
+    ]
+  }
+]
