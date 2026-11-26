@@ -1,0 +1,28 @@
+{
+  "id": "solarized-light",
+  "name": "日照浅色",
+  "nameEn": "Solarized Light",
+  "author": "pi-web-ui",
+  "description": "日照浅色（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Solarized Light (light) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "light",
+  "group": "classic",
+  "palette": {
+    "bg": "#fdf6e3",
+    "accent": "#2074af",
+    "text": "#586e75",
+    "accentContrast": "#ffffff",
+    "swatches": [
+      "#fdf6e3",
+      "#eee8d5",
+      "#2074af",
+      "#586e75",
+      "#546100",
+      "#0a55d1"
+    ]
+  },
+  "tags": [
+    "light",
+    "classic"
+  ]
+}

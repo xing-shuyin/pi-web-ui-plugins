@@ -1,0 +1,28 @@
+{
+  "id": "gruvbox-light",
+  "name": "格鲁夫沙",
+  "nameEn": "Gruvbox Light",
+  "author": "pi-web-ui",
+  "description": "格鲁夫沙（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Gruvbox Light (light) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "light",
+  "group": "classic",
+  "palette": {
+    "bg": "#fbf1c7",
+    "accent": "#af3a03",
+    "text": "#3c3836",
+    "accentContrast": "#ffffff",
+    "swatches": [
+      "#fbf1c7",
+      "#ebdbb2",
+      "#af3a03",
+      "#3c3836",
+      "#54510a",
+      "#084bb8"
+    ]
+  },
+  "tags": [
+    "light",
+    "classic"
+  ]
+}

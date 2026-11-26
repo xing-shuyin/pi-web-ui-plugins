@@ -1,0 +1,28 @@
+{
+  "id": "everforest-light",
+  "name": "森野浅绿",
+  "nameEn": "Everforest Light",
+  "author": "pi-web-ui",
+  "description": "森野浅绿（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Everforest Light (light) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "light",
+  "group": "classic",
+  "palette": {
+    "bg": "#fdf6e3",
+    "accent": "#3382ad",
+    "text": "#5c6a72",
+    "accentContrast": "#ffffff",
+    "swatches": [
+      "#fdf6e3",
+      "#f4f0d9",
+      "#3382ad",
+      "#5c6a72",
+      "#616e01",
+      "#0b5fe9"
+    ]
+  },
+  "tags": [
+    "light",
+    "classic"
+  ]
+}

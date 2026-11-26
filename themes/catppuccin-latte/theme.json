@@ -1,0 +1,28 @@
+{
+  "id": "catppuccin-latte",
+  "name": "Catppuccin 浅色",
+  "nameEn": "Catppuccin Latte",
+  "author": "pi-web-ui",
+  "description": "Catppuccin 浅色（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Catppuccin Latte (light) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "light",
+  "group": "classic",
+  "palette": {
+    "bg": "#eff1f5",
+    "accent": "#1e66f5",
+    "text": "#4c4f69",
+    "accentContrast": "#ffffff",
+    "swatches": [
+      "#eff1f5",
+      "#e6e9ef",
+      "#1e66f5",
+      "#4c4f69",
+      "#2d701e",
+      "#0a59da"
+    ]
+  },
+  "tags": [
+    "light",
+    "classic"
+  ]
+}

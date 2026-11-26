@@ -1,0 +1,26 @@
+{
+  "id": "wallpaper-flow",
+  "name": "壁纸专属 · 极简行文",
+  "nameEn": "Wallpaper Pure Flow",
+  "author": "pi-web-ui",
+  "description": "壁纸专属 · 极简行文（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Wallpaper Pure Flow (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "community",
+  "palette": {
+    "bg": "#050507",
+    "accent": "#ffffff",
+    "text": "#ffffff",
+    "accentContrast": "#000000",
+    "swatches": [
+      "#050507",
+      "#0c0d11",
+      "#ffffff",
+      "#4ade80",
+      "#94a3b8"
+    ]
+  },
+  "tags": [
+    "dark"
+  ]
+}

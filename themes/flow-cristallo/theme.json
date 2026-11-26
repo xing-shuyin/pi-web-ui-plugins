@@ -1,0 +1,26 @@
+{
+  "id": "flow-cristallo",
+  "name": "极简行文 · 深空微晶",
+  "nameEn": "Pure Flow · Cristallo Space",
+  "author": "pi-web-ui",
+  "description": "极简行文 · 深空微晶（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Pure Flow · Cristallo Space (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "builtin",
+  "palette": {
+    "bg": "#07090e",
+    "accent": "#38bdf8",
+    "text": "#ffffff",
+    "accentContrast": "#082f49",
+    "swatches": [
+      "#07090e",
+      "#121621",
+      "#38bdf8",
+      "#ffffff",
+      "#34d399"
+    ]
+  },
+  "tags": [
+    "dark"
+  ]
+}

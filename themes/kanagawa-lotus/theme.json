@@ -1,0 +1,28 @@
+{
+  "id": "kanagawa-lotus",
+  "name": "神奈川莲",
+  "nameEn": "Kanagawa Lotus",
+  "author": "pi-web-ui",
+  "description": "神奈川莲（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Kanagawa Lotus (light) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "light",
+  "group": "classic",
+  "palette": {
+    "bg": "#f2ecbc",
+    "accent": "#4d699b",
+    "text": "#545464",
+    "accentContrast": "#ffffff",
+    "swatches": [
+      "#f2ecbc",
+      "#e5ddb0",
+      "#4d699b",
+      "#545464",
+      "#4f6238",
+      "#0953cc"
+    ]
+  },
+  "tags": [
+    "light",
+    "classic"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "white",
+  "name": "白色",
+  "nameEn": "White",
+  "author": "pi-web-ui",
+  "description": "白色（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "White (light) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "light",
+  "group": "community",
+  "palette": {
+    "bg": "#ffffff",
+    "accent": "#0969da",
+    "text": "#1f2328",
+    "accentContrast": "#ffffff",
+    "swatches": [
+      "#ffffff",
+      "#0969da",
+      "#1f2328",
+      "#04825b",
+      "#1469f4"
+    ]
+  },
+  "tags": [
+    "light"
+  ]
+}

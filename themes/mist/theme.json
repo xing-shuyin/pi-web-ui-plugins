@@ -1,0 +1,27 @@
+{
+  "id": "mist",
+  "name": "雾蓝灰",
+  "nameEn": "Misty Blue Gray",
+  "author": "pi-web-ui",
+  "description": "雾蓝灰（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Misty Blue Gray (light) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "light",
+  "group": "community",
+  "palette": {
+    "bg": "#e9eef4",
+    "accent": "#027dbd",
+    "text": "#1e293b",
+    "accentContrast": "#ffffff",
+    "swatches": [
+      "#e9eef4",
+      "#f8fafc",
+      "#027dbd",
+      "#1e293b",
+      "#047351",
+      "#0a5bdf"
+    ]
+  },
+  "tags": [
+    "light"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "md-preview",
+  "name": "紫晕",
+  "nameEn": "Purple Haze",
+  "author": "pi-web-ui",
+  "description": "紫晕（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Purple Haze (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "community",
+  "palette": {
+    "bg": "#0a0b10",
+    "accent": "#3b82f6",
+    "text": "#e6e8ef",
+    "accentContrast": "#0b0d12",
+    "swatches": [
+      "#0a0b10",
+      "#3b82f6",
+      "#e6e8ef",
+      "#22c55e"
+    ]
+  },
+  "tags": [
+    "dark"
+  ]
+}

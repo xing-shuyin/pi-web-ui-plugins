@@ -1,0 +1,26 @@
+{
+  "id": "cyberpunk",
+  "name": "赛博朋克",
+  "nameEn": "Cyberpunk",
+  "author": "pi-web-ui",
+  "description": "赛博朋克（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Cyberpunk (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "community",
+  "palette": {
+    "bg": "#0a0a0f",
+    "accent": "#00d4ff",
+    "text": "#e6e6ff",
+    "accentContrast": "#12121e",
+    "swatches": [
+      "#0a0a0f",
+      "#12121e",
+      "#00d4ff",
+      "#e6e6ff",
+      "#00ff41"
+    ]
+  },
+  "tags": [
+    "dark"
+  ]
+}

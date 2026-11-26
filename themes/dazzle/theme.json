@@ -1,0 +1,26 @@
+{
+  "id": "dazzle",
+  "name": "炫彩",
+  "nameEn": "Dazzle",
+  "author": "pi-web-ui",
+  "description": "炫彩（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Dazzle (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "community",
+  "palette": {
+    "bg": "#0b0b14",
+    "accent": "#818cf8",
+    "text": "#e8e8f0",
+    "accentContrast": "#13131e",
+    "swatches": [
+      "#0b0b14",
+      "#13131e",
+      "#818cf8",
+      "#e8e8f0",
+      "#22c55e"
+    ]
+  },
+  "tags": [
+    "dark"
+  ]
+}

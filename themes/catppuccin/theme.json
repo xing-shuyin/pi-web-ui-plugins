@@ -1,0 +1,28 @@
+{
+  "id": "catppuccin",
+  "name": "Catppuccin",
+  "nameEn": "Catppuccin Mocha",
+  "author": "pi-web-ui",
+  "description": "Catppuccin（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Catppuccin Mocha (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "classic",
+  "palette": {
+    "bg": "#1e1e2e",
+    "accent": "#89b4fa",
+    "text": "#cdd6f4",
+    "accentContrast": "#24273a",
+    "swatches": [
+      "#1e1e2e",
+      "#24273a",
+      "#89b4fa",
+      "#cdd6f4",
+      "#a6e3a1",
+      "#629bf8"
+    ]
+  },
+  "tags": [
+    "dark",
+    "classic"
+  ]
+}

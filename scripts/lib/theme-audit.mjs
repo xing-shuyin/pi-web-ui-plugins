@@ -25,7 +25,7 @@ const FORBIDDEN_CSS_PATTERNS = [
     message: "CSS contains forbidden '-moz-binding' directive",
   },
   {
-    pattern: /behavior\s*:/i,
+    pattern: /(?<![A-Za-z0-9-])behavior\s*:/i,
     message: "CSS contains forbidden 'behavior:' directive",
   },
   {

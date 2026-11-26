@@ -1,0 +1,26 @@
+{
+  "id": "translucent",
+  "name": "半透明",
+  "nameEn": "Translucent",
+  "author": "pi-web-ui",
+  "description": "半透明（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Translucent (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "community",
+  "palette": {
+    "bg": "#0d0e12",
+    "accent": "#8b5cf6",
+    "text": "#e6e8ef",
+    "accentContrast": "#0b0d12",
+    "swatches": [
+      "#0d0e12",
+      "#14161c",
+      "#8b5cf6",
+      "#e6e8ef",
+      "#34d399"
+    ]
+  },
+  "tags": [
+    "dark"
+  ]
+}

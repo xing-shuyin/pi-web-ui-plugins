@@ -1,0 +1,27 @@
+{
+  "id": "wallpaper-obsidian",
+  "name": "壁纸专属 · 黑曜冷月",
+  "nameEn": "Wallpaper Obsidian",
+  "author": "pi-web-ui",
+  "description": "壁纸专属 · 黑曜冷月（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Wallpaper Obsidian (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "community",
+  "palette": {
+    "bg": "#050507",
+    "accent": "#e2e8f0",
+    "text": "#ffffff",
+    "accentContrast": "#0c0d11",
+    "swatches": [
+      "#050507",
+      "#0c0d11",
+      "#e2e8f0",
+      "#ffffff",
+      "#4ade80",
+      "#94a3b8"
+    ]
+  },
+  "tags": [
+    "dark"
+  ]
+}

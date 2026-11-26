@@ -1,0 +1,27 @@
+{
+  "id": "paper",
+  "name": "暖纸",
+  "nameEn": "Warm Paper",
+  "author": "pi-web-ui",
+  "description": "暖纸（浅色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Warm Paper (light) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "light",
+  "group": "community",
+  "palette": {
+    "bg": "#f7f1e3",
+    "accent": "#b45309",
+    "text": "#3f372c",
+    "accentContrast": "#ffffff",
+    "swatches": [
+      "#f7f1e3",
+      "#fffdf6",
+      "#b45309",
+      "#3f372c",
+      "#147739",
+      "#0a5de4"
+    ]
+  },
+  "tags": [
+    "light"
+  ]
+}

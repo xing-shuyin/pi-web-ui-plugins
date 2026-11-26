@@ -1,0 +1,27 @@
+{
+  "id": "flow",
+  "name": "极简行文",
+  "nameEn": "Pure Flow",
+  "author": "pi-web-ui",
+  "description": "极简行文（深色）社区视觉主题，由 pi-web-ui 官方主题库迁移收录。",
+  "descriptionEn": "Pure Flow (dark) theme migrated from the pi-web-ui theme collection.",
+  "scheme": "dark",
+  "group": "builtin",
+  "palette": {
+    "bg": "#171717",
+    "accent": "#ffffff",
+    "text": "#f2f2f2",
+    "accentContrast": "#000000",
+    "swatches": [
+      "#171717",
+      "#212121",
+      "#ffffff",
+      "#f2f2f2",
+      "#10b981",
+      "#4f8ef7"
+    ]
+  },
+  "tags": [
+    "dark"
+  ]
+}
