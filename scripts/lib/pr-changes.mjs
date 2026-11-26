@@ -42,20 +42,26 @@ export function getChangedFiles(baseRef = "origin/main") {
 
 /**
  * 校验 PR 变更范围。
+ * 允许单个 PR 变更：
+ * 1. 单个插件：`plugins/<id>/plugin.json`
+ * 2. 单个主题：`themes/<id>/theme.json` 以及可选的 `themes/<id>/theme.css`
+ *
  * @param {string[]} changedFiles 改动的文件列表
- * @returns {{ ok: boolean, pluginId: string | null, errors: string[] }}
+ * @returns {{ ok: boolean, type: "plugin" | "theme" | null, id: string | null, errors: string[] }}
  */
 export function auditPrScope(changedFiles) {
   const errors = [];
   if (!changedFiles || changedFiles.length === 0) {
     return {
       ok: false,
-      pluginId: null,
+      type: null,
+      id: null,
       errors: ["No files changed in this PR."],
     };
   }
 
   const touchedPluginIds = new Set();
+  const touchedThemeIds = new Set();
 
   for (const file of changedFiles) {
     const normalized = file.replace(/\\/g, "/");
@@ -69,36 +75,69 @@ export function auditPrScope(changedFiles) {
       normalized === "package-lock.json"
     ) {
       errors.push(
-        `Forbidden change to protected file: "${file}". PRs may only touch files under plugins/<id>/.`,
+        `Forbidden change to protected file: "${file}". PRs may only touch files under plugins/<id>/ or themes/<id>/.`,
       );
       continue;
     }
 
-    const match = normalized.match(/^plugins\/([A-Za-z0-9_-]+)\/plugin\.json$/);
-    if (!match) {
-      errors.push(
-        `File "${file}" is not allowed. Only "plugins/<plugin-id>/plugin.json" can be modified or added.`,
-      );
+    const pluginMatch = normalized.match(
+      /^plugins\/([A-Za-z0-9_-]+)\/plugin\.json$/,
+    );
+    if (pluginMatch) {
+      touchedPluginIds.add(pluginMatch[1]);
       continue;
     }
 
-    touchedPluginIds.add(match[1]);
+    const themeMatch = normalized.match(
+      /^themes\/([A-Za-z0-9_-]+)\/(theme\.json|theme\.css)$/,
+    );
+    if (themeMatch) {
+      touchedThemeIds.add(themeMatch[1]);
+      continue;
+    }
+
+    errors.push(
+      `File "${file}" is not allowed. Only "plugins/<plugin-id>/plugin.json" or "themes/<theme-id>/(theme.json|theme.css)" can be modified or added.`,
+    );
   }
 
-  if (touchedPluginIds.size === 0 && errors.length === 0) {
-    errors.push("No plugin.json found in PR changes.");
+  // 跨类型或多项校验
+  if (touchedPluginIds.size > 0 && touchedThemeIds.size > 0) {
+    errors.push(
+      "A single PR cannot mix plugin and theme changes. Please submit plugins and themes in separate PRs.",
+    );
   } else if (touchedPluginIds.size > 1) {
     errors.push(
       `A single PR can only submit or update 1 plugin at a time. Found ${touchedPluginIds.size} plugins: ${[...touchedPluginIds].join(", ")}`,
     );
+  } else if (touchedThemeIds.size > 1) {
+    errors.push(
+      `A single PR can only submit or update 1 theme at a time. Found ${touchedThemeIds.size} themes: ${[...touchedThemeIds].join(", ")}`,
+    );
   }
 
-  const pluginId =
-    touchedPluginIds.size === 1 ? [...touchedPluginIds][0] : null;
+  if (
+    touchedPluginIds.size === 0 &&
+    touchedThemeIds.size === 0 &&
+    errors.length === 0
+  ) {
+    errors.push("No plugin.json or theme.json found in PR changes.");
+  }
+
+  const isPlugin = touchedPluginIds.size === 1;
+  const isTheme = touchedThemeIds.size === 1;
+
+  const type = isPlugin ? "plugin" : isTheme ? "theme" : null;
+  const id = isPlugin
+    ? [...touchedPluginIds][0]
+    : isTheme
+      ? [...touchedThemeIds][0]
+      : null;
 
   return {
     ok: errors.length === 0,
-    pluginId,
+    type,
+    id,
     errors,
   };
 }
@@ -112,4 +151,16 @@ export function listAllPlugins() {
   return readdirSync(pluginsDir, { withFileTypes: true })
     .filter((d) => d.isDirectory())
     .map((d) => d.name);
+}
+
+/**
+ * 获取仓库内所有已存在的主题 ID 列表。
+ */
+export function listAllThemes() {
+  const themesDir = resolve(ROOT_DIR, "themes");
+  if (!existsSync(themesDir)) return [];
+  return readdirSync(themesDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .filter((id) => existsSync(resolve(themesDir, `${id}/theme.json`)));
 }

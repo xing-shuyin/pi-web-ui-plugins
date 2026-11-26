@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PiWebUiThemeMetadata",
+  "description": "Metadata definition for a pi-web-ui theme registry entry",
+  "type": "object",
+  "required": ["id", "name", "author", "description", "scheme", "palette"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "minLength": 2,
+      "maxLength": 50,
+      "description": "Unique theme identifier, matches folder name and theme id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Display name of the theme"
+    },
+    "nameEn": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Optional English display name shown in English UI"
+    },
+    "author": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+$",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "GitHub username or organization of the author"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 300,
+      "description": "Chinese description of the theme"
+    },
+    "descriptionEn": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "Optional English description of the theme"
+    },
+    "scheme": {
+      "type": "string",
+      "enum": ["dark", "light"],
+      "description": "Color scheme: dark or light"
+    },
+    "group": {
+      "type": "string",
+      "maxLength": 30,
+      "description": "Optional group categorization (e.g. classic, builtin, modern, community)"
+    },
+    "palette": {
+      "type": "object",
+      "required": ["bg", "accent", "text"],
+      "additionalProperties": false,
+      "description": "Theme color palette preview",
+      "properties": {
+        "bg": {
+          "type": "string",
+          "pattern": "^#([0-9a-fA-F]{3,8})$",
+          "description": "Main background color hex"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#([0-9a-fA-F]{3,8})$",
+          "description": "Main accent color hex"
+        },
+        "text": {
+          "type": "string",
+          "pattern": "^#([0-9a-fA-F]{3,8})$",
+          "description": "Main foreground text color hex"
+        },
+        "accentContrast": {
+          "type": "string",
+          "pattern": "^#([0-9a-fA-F]{3,8})$",
+          "description": "Foreground color on accent background"
+        },
+        "swatches": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#([0-9a-fA-F]{3,8})$"
+          },
+          "maxItems": 8,
+          "description": "4-8 representative palette colors for card preview"
+        }
+      }
+    },
+    "source": {
+      "type": "string",
+      "maxLength": 300,
+      "pattern": "^([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(/[A-Za-z0-9_.-]+)*(#[A-Za-z0-9_.-]+)?|https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+.*)$",
+      "description": "Optional remote GitHub repository specifier if hosted externally"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "maxLength": 300,
+      "description": "Optional project homepage or GitHub repository URL"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 30
+      },
+      "maxItems": 10,
+      "description": "Keywords or category tags (e.g. minimal, oled, pastel, cyberpunk)"
+    }
+  }
+}

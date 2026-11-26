@@ -1,0 +1,25 @@
+{
+  "id": "tokyo-night",
+  "name": "东京夜色 · Tokyo Night",
+  "nameEn": "Tokyo Night",
+  "author": "pi-web-ui-community",
+  "description": "经典 Tokyo Night 深色暗调主题，融合霓虹天蓝与夜幕深紫，提供高对比度护眼色彩。",
+  "descriptionEn": "Classic Tokyo Night dark theme celebrating the lights of downtown Tokyo at night with clean contrast.",
+  "scheme": "dark",
+  "group": "community",
+  "palette": {
+    "bg": "#1a1b26",
+    "accent": "#7aa2f7",
+    "text": "#c0caf5",
+    "accentContrast": "#15161e",
+    "swatches": [
+      "#1a1b26",
+      "#24283b",
+      "#7aa2f7",
+      "#bb9af7",
+      "#7dcfff",
+      "#9ece6a"
+    ]
+  },
+  "tags": ["dark", "tokyo-night", "neon", "popular"]
+}

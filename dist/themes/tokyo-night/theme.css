@@ -1,0 +1,70 @@
+/* theme-name: 东京夜色 · Tokyo Night */
+/* theme-name-en: Tokyo Night */
+/* theme-group: community */
+
+:root {
+  color-scheme: dark;
+  --bg: #1a1b26;
+  --bg-elev: #24283b;
+  --bg-elev2: #2f354a;
+  --border: rgba(122, 162, 247, 0.18);
+  --border-soft: rgba(122, 162, 247, 0.08);
+  --text: #c0caf5;
+  --text-dim: #9aa5ce;
+  --text-faint: #7982a9;
+  --accent: #7aa2f7;
+  --accent-contrast: #15161e;
+  --accent-soft: rgba(122, 162, 247, 0.16);
+
+  --green: #9ece6a;
+  --on-green: #15161e;
+  --green-soft: rgba(158, 206, 106, 0.16);
+  --red: #f7768e;
+  --on-red: #15161e;
+  --red-soft: rgba(247, 118, 142, 0.16);
+  --amber: #e0af68;
+  --amber-text: #e0af68;
+  --blue: #7dcfff;
+  --on-blue: #15161e;
+  --blue-soft: rgba(125, 207, 255, 0.16);
+
+  --err-text: #f7768e;
+  --red-text: #f7768e;
+  --info-blue: #7aa2f7;
+  --link: #7aa2f7;
+  --link-hover: #89b4fa;
+  --link-soft: #7dcfff;
+  --skill-blue: #7dcfff;
+  --auth-green: #9ece6a;
+  --plugin-purple: #bb9af7;
+  --md-strong: #ffffff;
+
+  --term-bg: #16161e;
+  --term-fg: #c0caf5;
+  --term-cursor: #7aa2f7;
+  --term-cursor-accent: #16161e;
+  --term-selection: rgba(122, 162, 247, 0.28);
+  --term-black: #15161e;
+  --term-red: #f7768e;
+  --term-green: #9ece6a;
+  --term-yellow: #e0af68;
+  --term-blue: #7aa2f7;
+  --term-magenta: #bb9af7;
+  --term-cyan: #7dcfff;
+  --term-white: #a9b1d6;
+  --term-bright-black: #414868;
+  --term-bright-red: #f7768e;
+  --term-bright-green: #9ece6a;
+  --term-bright-yellow: #e0af68;
+  --term-bright-blue: #7aa2f7;
+  --term-bright-magenta: #bb9af7;
+  --term-bright-cyan: #7dcfff;
+  --term-bright-white: #c0caf5;
+
+  --tooltip-bg: #24283b;
+  --code-bg: #16161e;
+  --code-text: #c0caf5;
+  --code-border: rgba(122, 162, 247, 0.18);
+  --scroll-thumb: #2f354a;
+  --scroll-thumb-hover: #414868;
+}

@@ -6,10 +6,12 @@ import {
   getChangedFiles,
   auditPrScope,
   listAllPlugins,
+  listAllThemes,
 } from "./lib/pr-changes.mjs";
 import { validatePluginSchema } from "./lib/schema-validator.mjs";
 import { auditRemoteRepo } from "./lib/repo-checker.mjs";
 import { auditSecurity } from "./lib/security-scan.mjs";
+import { auditSingleTheme } from "./lib/theme-audit.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = resolve(__dirname, "..");
@@ -23,6 +25,7 @@ async function auditSinglePlugin(pluginId) {
   const pluginFile = resolve(ROOT_DIR, `plugins/${pluginId}/plugin.json`);
   if (!existsSync(pluginFile)) {
     return {
+      type: "plugin",
       pluginId,
       passed: false,
       risk: "HIGH",
@@ -37,6 +40,7 @@ async function auditSinglePlugin(pluginId) {
     data = JSON.parse(readFileSync(pluginFile, "utf8"));
   } catch (err) {
     return {
+      type: "plugin",
       pluginId,
       passed: false,
       risk: "HIGH",
@@ -84,6 +88,7 @@ async function auditSinglePlugin(pluginId) {
   }
 
   return {
+    type: "plugin",
     pluginId,
     passed: errors.length === 0,
     risk: finalRisk,
@@ -108,19 +113,42 @@ function renderMarkdownReport(result) {
         ? "🟡 **MEDIUM RISK** (Needs maintainer review)"
         : "🔴 **HIGH RISK** (Changes required)";
 
-  let md = `## ${statusEmoji} Plugin Audit Report: \`${result.pluginId}\`\n\n`;
+  const isTheme = result.type === "theme";
+  const targetId = isTheme ? result.themeId : result.pluginId;
+
+  let md = `## ${statusEmoji} ${isTheme ? "Theme" : "Plugin"} Audit Report: \`${targetId}\`\n\n`;
   md += `| Field | Value |\n`;
   md += `|---|---|\n`;
-  md += `| **Plugin ID** | \`${result.pluginId}\` |\n`;
+  md += `| **Type** | \`${isTheme ? "Theme (视觉主题)" : "Plugin (功能插件)"}\` |\n`;
+  md += `| **ID** | \`${targetId}\` |\n`;
   md += `| **Name** | ${result.details.name || "N/A"} |\n`;
   md += `| **Author** | @${result.details.author || "N/A"} |\n`;
-  md += `| **Source** | \`${result.details.source || "N/A"}\` |\n`;
-  md += `| **Risk Level** | ${riskBadge} |\n`;
-  md += `| **Permissions** | ${
-    result.details.permissions?.length
-      ? result.details.permissions.map((p) => `\`${p}\``).join(", ")
-      : "*None*"
-  } |\n\n`;
+
+  if (isTheme) {
+    md += `| **Scheme** | \`${result.details.scheme || "N/A"}\` |\n`;
+    if (result.details.palette) {
+      const swatches = (
+        result.details.palette.swatches || [
+          result.details.palette.bg,
+          result.details.palette.accent,
+          result.details.palette.text,
+        ]
+      )
+        .filter(Boolean)
+        .map((c) => `\`${c}\``)
+        .join(" ");
+      md += `| **Palette** | ${swatches} |\n`;
+    }
+  } else {
+    md += `| **Source** | \`${result.details.source || "N/A"}\` |\n`;
+    md += `| **Permissions** | ${
+      result.details.permissions?.length
+        ? result.details.permissions.map((p) => `\`${p}\``).join(", ")
+        : "*None*"
+    } |\n`;
+  }
+
+  md += `| **Risk Level** | ${riskBadge} |\n\n`;
 
   if (result.errors.length > 0) {
     md += `### ❌ Errors (Must be resolved)\n`;
@@ -148,31 +176,56 @@ function renderMarkdownReport(result) {
 }
 
 async function main() {
-  console.log("🔍 Running pi-web-ui plugin audit...\n");
+  console.log("🔍 Running pi-web-ui registry audit...\n");
 
   if (isTestAll) {
     const plugins = listAllPlugins();
-    console.log(`Auditing all ${plugins.length} plugins in registry...`);
+    const themes = listAllThemes();
+    console.log(
+      `Auditing all ${plugins.length} plugins and ${themes.length} themes in registry...`,
+    );
+
     let totalErrors = 0;
+
     for (const id of plugins) {
       const res = await auditSinglePlugin(id);
       if (!res.passed) {
-        console.error(`❌ [${id}] Failed:`, res.errors);
+        console.error(`❌ [plugin:${id}] Failed:`, res.errors);
         totalErrors++;
       } else {
-        console.log(`✅ [${id}] OK (Risk: ${res.risk})`);
+        console.log(`✅ [plugin:${id}] OK (Risk: ${res.risk})`);
       }
     }
+
+    for (const id of themes) {
+      const res = await auditSingleTheme(id);
+      if (!res.passed) {
+        console.error(`❌ [theme:${id}] Failed:`, res.errors);
+        totalErrors++;
+      } else {
+        console.log(`✅ [theme:${id}] OK (Risk: ${res.risk})`);
+      }
+    }
+
     if (totalErrors > 0) {
       process.exit(1);
     }
-    console.log(`\n🎉 All ${plugins.length} plugins passed audit!`);
+    console.log(
+      `\n🎉 All ${plugins.length} plugins and ${themes.length} themes passed audit!`,
+    );
     return;
   }
 
-  let targetPluginId = explicitTarget;
+  let targetId = explicitTarget;
+  let targetType = null;
 
-  if (!targetPluginId) {
+  if (targetId) {
+    if (existsSync(resolve(ROOT_DIR, `themes/${targetId}`))) {
+      targetType = "theme";
+    } else {
+      targetType = "plugin";
+    }
+  } else {
     // 自动检测 PR 变更
     const changedFiles = getChangedFiles();
     console.log("Changed files detected:", changedFiles);
@@ -188,11 +241,16 @@ async function main() {
       }
       process.exit(1);
     }
-    targetPluginId = scope.pluginId;
+    targetId = scope.id;
+    targetType = scope.type;
   }
 
-  console.log(`Target plugin: "${targetPluginId}"`);
-  const result = await auditSinglePlugin(targetPluginId);
+  console.log(`Target: [${targetType}] "${targetId}"`);
+  const result =
+    targetType === "theme"
+      ? await auditSingleTheme(targetId)
+      : await auditSinglePlugin(targetId);
+
   const reportMd = renderMarkdownReport(result);
 
   console.log("\n" + reportMd);
@@ -209,7 +267,8 @@ async function main() {
       process.env.GITHUB_OUTPUT,
       `auto_merge=${result.passed ? "true" : "false"}\n`,
     );
-    appendFileSync(process.env.GITHUB_OUTPUT, `plugin_id=${result.pluginId}\n`);
+    appendFileSync(process.env.GITHUB_OUTPUT, `target_id=${targetId}\n`);
+    appendFileSync(process.env.GITHUB_OUTPUT, `target_type=${targetType}\n`);
   }
 
   if (!result.passed) {
